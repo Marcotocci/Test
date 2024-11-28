@@ -24,11 +24,11 @@ public:
  
 private:
   
-    void topic_callback(const sensor_msgs::msg::Image & message)
+    void topic_callback(const sensor_msgs::msg::Image & msg_) //Secondo me qua dentro va messo msg_, se vedete l'api mi pare ci sia un puntatore, verificate
     {
       cv_bridge::CvImagePtr cv_ptr;
 
-      cv_ptr = cv_bridge::toCvCopy(message, sensor_msgs::msg::Image )
+      cv_ptr = cv_bridge::toCvCopy(&msg_, sensor_msgs::msg::Image )
   }
 
   // Setup SimpleBlobDetector parameters.
